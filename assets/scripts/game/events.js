@@ -1,14 +1,14 @@
 'use strict'
 
 const store = require('../store')
-// const ui = require('./ui')
+const ui = require('./ui')
 const game = require('./game')
 let player = 'X'
 
 const onClickBoard = function () {
   const cellValue = $(event.target).text()
   if (cellValue !== '') {
-    console.error('already a move here')
+    $('#messages').text('this space is occupied!')
   } else {
     store.value = player
     store.index = $(event.target).attr('id')
@@ -19,10 +19,16 @@ const onClickBoard = function () {
     } else {
       player = 'O'
     }
-    console.log(player)
+    $('#messages').text('player ' + player + '\'s turn!')
   }
 }
 
+const onReset = function () {
+  ui.boardClear
+}
+
+
 module.exports = {
-  onClickBoard
+  onClickBoard,
+  player
 }

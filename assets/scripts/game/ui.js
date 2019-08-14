@@ -1,13 +1,16 @@
 'use strict'
 
-const whichTurn = function () {
-  let player = 'X'
-  if (player === 'X') {
-    (player = 'O')
-  }
-  return player
+const store = require('../store')
+const game = require('./game')
+
+const boardClear = function () {
+  $('.box').text('')
+  $('#messages').replaceWith('<div id="messages">player X\'s turn!</div>')
+  $('#reset').text('')
+  game.player = 'X'
+  console.log(game.player)
 }
 
 module.exports = {
-  whichTurn
+  boardClear
 }
