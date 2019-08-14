@@ -1,7 +1,8 @@
 'use strict'
 
-const ui = require('./ui')
+// const ui = require('./ui')
 const store = require('./../store')
+// const events = require('./events')
 
 let gameBoard = ['', '', '', '', '', '', '', '', '']
 
@@ -10,30 +11,29 @@ let gameBoard = ['', '', '', '', '', '', '', '', '']
 
 const playedMove = function (value, index) {
   gameBoard[index] = value
-  console.log(gameBoard)
-  function checkForWin () {
-    if ((gameBoard[0] !== ('') && gameBoard[0] === gameBoard[1] && gameBoard[0] === gameBoard[2]) ||
-    (gameBoard[3] !== ('') && gameBoard[3] === gameBoard[4] && gameBoard[3] === gameBoard[5]) ||
-    (gameBoard[6] !== ('') && gameBoard[6] === gameBoard[7] && gameBoard[6] === gameBoard[8]) ||
-    (gameBoard[0] !== ('') && gameBoard[0] === gameBoard[3] && gameBoard[0] === gameBoard[6]) ||
-    (gameBoard[1] !== ('') && gameBoard[1] === gameBoard[4] && gameBoard[1] === gameBoard[7]) ||
-    (gameBoard[2] !== ('') && gameBoard[2] === gameBoard[5] && gameBoard[2] === gameBoard[8]) ||
-    (gameBoard[0] !== ('') && gameBoard[0] === gameBoard[4] && gameBoard[0] === gameBoard[8]) ||
-    (gameBoard[2] !== ('') && gameBoard[2] === gameBoard[4] && gameBoard[2] === gameBoard[6])) {
-      $('#messages').replaceWith('<div id="messages">player ' + store.value + ' wins!</div>')
-      $('#reset').html('<button>reset</button>')
-    }
+}
+
+function checkForWin () {
+  if ((gameBoard[0] !== ('') && gameBoard[0] === gameBoard[1] && gameBoard[0] === gameBoard[2]) ||
+  (gameBoard[3] !== ('') && gameBoard[3] === gameBoard[4] && gameBoard[3] === gameBoard[5]) ||
+  (gameBoard[6] !== ('') && gameBoard[6] === gameBoard[7] && gameBoard[6] === gameBoard[8]) ||
+  (gameBoard[0] !== ('') && gameBoard[0] === gameBoard[3] && gameBoard[0] === gameBoard[6]) ||
+  (gameBoard[1] !== ('') && gameBoard[1] === gameBoard[4] && gameBoard[1] === gameBoard[7]) ||
+  (gameBoard[2] !== ('') && gameBoard[2] === gameBoard[5] && gameBoard[2] === gameBoard[8]) ||
+  (gameBoard[0] !== ('') && gameBoard[0] === gameBoard[4] && gameBoard[0] === gameBoard[8]) ||
+  (gameBoard[2] !== ('') && gameBoard[2] === gameBoard[4] && gameBoard[2] === gameBoard[6])) {
+    return true
+  } else {
+    $('#messages').text('player ' + store.value + '\'s turn!')
   }
-  checkForWin()
 }
 
 const resetBoard = function () {
   gameBoard = ['', '', '', '', '', '', '', '', '']
 }
 
-// check for win condition
-
 module.exports = {
   playedMove,
-  resetBoard
+  resetBoard,
+  checkForWin
 }

@@ -6,29 +6,35 @@ const game = require('./game')
 let player = 'X'
 
 const onClickBoard = function () {
+  store.value = player
   const cellValue = $(event.target).text()
   if (cellValue !== '') {
     $('#messages').text('this space is occupied!')
   } else {
-    store.value = player
+    ui.makeMoveOnBoard()
     store.index = $(event.target).attr('id')
     game.playedMove(store.value, store.index)
-    $(event.target).text(player)
-    if (player === 'O') {
+    ui.displayMessage()
+    if (store.value === 'O') {
       player = 'X'
-    } else {
+    } else if (store.value === 'X') {
       player = 'O'
     }
-    $('#messages').text('player ' + player + '\'s turn!')
+    store.value = player
+    game.checkForWin()
+    if (game.checkForWin() === true) {
+      player = 'X'
+    }
   }
 }
 
-const onReset = function () {
-  ui.boardClear
+const onBoardClear = function () {
+  game.gameBoard = ['', '', '', '', '', '', '', '', '']
+  ui.boardClear()
 }
-
 
 module.exports = {
   onClickBoard,
-  player
+  player,
+  onBoardClear
 }
