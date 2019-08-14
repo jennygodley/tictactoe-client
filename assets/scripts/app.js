@@ -1,7 +1,7 @@
 'use strict'
 
-const events = require('./auth/events')
+const events = require('./game/events')
 
 $(() => {
-  $('#0').on('click', events.onClickZero)
+  $('.box').on('click', events.onClickBoard)
 })
