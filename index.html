@@ -53,6 +53,27 @@
           <div id="reset"></div>
         </div>
 
+        <div class="signed-in-options">
+          <div id="account-messages"></div>
+          <form id="password" class="border">
+            <fieldset>
+              <legend>reset password</legend>
+              <input type="password" name="passwords[old]" placeholder="old password">
+              <input type="password" name="passwords[new]" placeholder="new password">
+              <input type="submit" value="reset!">
+              <div id="password_message"></div>
+            </fieldset>
+          </form>
+
+          <form id="sign-out" class="border">
+            <fieldset>
+              <legend>sign out</legend>
+              <input type="submit" value="sign out!">
+              <div id="signout_message"></div>
+            </fieldset>
+          </form>
+        </div>
+
       </div>
     </body>
 </html>
