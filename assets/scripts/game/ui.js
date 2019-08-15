@@ -36,7 +36,8 @@ const newGameFailure = function () {
 
 const getGameSuccess = function (data) {
   console.log(data)
-  $('#get-game-messages').text('here is the data!')
+  console.log(data.games.length)
+  $('#get-game-messages').replaceWith('<div id="get-game-messages">you\'ve played ' + data.games.length + ' games!</div>')
 }
 
 const getGameFailure = function () {

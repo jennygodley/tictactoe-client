@@ -6,11 +6,6 @@ const gameEvents = require('./../game/events')
 $('.game-board').hide()
 $('.signed-in-options').hide()
 
-// $('#sign-up').reset()
-// $('#sign-in').on()
-// $('#password').on('submit', authEvents.onPassword)
-// $('#sign-out').on('submit', authEvents.onSignOut)
-
 const signUpSuccess = function () {
   console.log('signUpSuccess ran')
   $('#signup_message').text('signed up successfully!')
@@ -27,14 +22,11 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (data) {
-  // handle storying user data/token, if it exists
   store.user = data.user
-  console.log(store.user)
   $('#signin_message').text('signed in successfully!').delay(1000).fadeOut()
   $('#signin_message').removeClass()
   $('#signin_message').addClass('success')
   $('#toggle').toggle()
-  console.log('signInSuccess ran! User is', store.user)
   $('.game-board').show()
   gameEvents.onNewBoard()
   $('.signed-in-options').show()
