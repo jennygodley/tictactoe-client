@@ -13,7 +13,6 @@ const onClickBoard = function () {
   } else {
     store.index = $(event.target).attr('id')
     store.value = player
-    console.log(store.value, ' is store value at onClickBoard')
     game.playedMove(store.value, store.index)
     ui.makeMoveOnBoard()
     ui.displayMessage()
@@ -36,12 +35,20 @@ const onNewBoard = function () {
   game.gameBoard = ['', '', '', '', '', '', '', '', '']
   player = 'X'
   api.newGame()
-    .then(ui.newGameSuccess)
+    .then(ui.boardClear)
     .catch(ui.newGameFailure)
+}
+
+const onGetGame = function (event) {
+  event.preventDefault()
+  api.getGames()
+    .then(ui.getGameSuccess)
+    .catch(ui.getGameFailure)
 }
 
 module.exports = {
   onClickBoard,
   player,
-  onNewBoard
+  onNewBoard,
+  onGetGame
 }

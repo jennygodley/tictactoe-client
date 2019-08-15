@@ -4,16 +4,15 @@ const store = require('../store')
 const game = require('./game')
 const events = require('./events')
 const api = require('./api')
-const ui = require('./ui')
 
 const boardClear = function (data) {
   game.gameBoard = ['', '', '', '', '', '', '', '', '']
   store.value = 'X'
+  store.id = data.game.id
+
   $('.box').text('')
   $('#messages').replaceWith('<div id="messages">player X\'s turn!</div>')
   $('#new-game').html('')
-  console.log(events.player)
-  ui.newGameSuccess(data)
 }
 
 const makeMoveOnBoard = function () {
@@ -31,30 +30,24 @@ const displayMessage = function () {
   }
 }
 
-const newGameSuccess = function (data) {
-  store.id = data.game.id
-  console.log(data)
-}
-
-const newGameFailure = function (data) {
+const newGameFailure = function () {
   $('#messages').replaceWith('<div id="messages">please try again!</div>')
 }
 
-// const getGameSuccess = function (responseData) {
-//   api.getGames()
-//   console.log(responseData)
-// }
-//
-// const getGameFailure = function () {
-//   $('#get-game-messages').text('get game failed!')
-//   $('#get-game-messages').removeClass()
-//   $('#get-game-messages').addClass('failure')
-// }
+const getGameSuccess = function (data) {
+  console.log(data)
+  $('#get-game-messages').text('here is the data!')
+}
+
+const getGameFailure = function () {
+  $('#get-game-messages').text('something\'s gone wrong!')
+}
 
 module.exports = {
   boardClear,
   displayMessage,
   makeMoveOnBoard,
-  newGameSuccess,
   newGameFailure,
+  getGameSuccess,
+  getGameFailure
 }

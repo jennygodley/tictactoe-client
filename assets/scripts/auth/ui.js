@@ -1,6 +1,7 @@
 'use strict'
 
-let store = require('./../store')
+const store = require('./../store')
+const gameEvents = require('./../game/events')
 
 $('.game-board').hide()
 $('.signed-in-options').hide()
@@ -35,6 +36,7 @@ const signInSuccess = function (data) {
   $('#toggle').toggle()
   console.log('signInSuccess ran! User is', store.user)
   $('.game-board').show()
+  gameEvents.onNewBoard()
   $('.signed-in-options').show()
   $('.sign-in-sign-up').hide(500)
   $('#sign-in').trigger('reset')

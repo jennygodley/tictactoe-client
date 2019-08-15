@@ -7,13 +7,8 @@ const api = require('./api')
 
 let gameBoard = ['', '', '', '', '', '', '', '', '']
 
-// create function that accepts value and index from events
-// push value to gameboard index
-
 const playedMove = function (value, index) {
   gameBoard[index] = value
-  // store.index = index
-  // store.value = value
 }
 
 function checkForWin () {
