@@ -4,14 +4,16 @@ const store = require('../store')
 const game = require('./game')
 const events = require('./events')
 const api = require('./api')
+const ui = require('./ui')
 
-const boardClear = function () {
-  api.newGame()
+const boardClear = function (data) {
+  game.gameBoard = ['', '', '', '', '', '', '', '', '']
+  store.value = 'X'
   $('.box').text('')
   $('#messages').replaceWith('<div id="messages">player X\'s turn!</div>')
   $('#new-game').html('')
-  game.resetBoard()
   console.log(events.player)
+  ui.newGameSuccess(data)
 }
 
 const makeMoveOnBoard = function () {
@@ -29,8 +31,30 @@ const displayMessage = function () {
   }
 }
 
+const newGameSuccess = function (data) {
+  store.id = data.game.id
+  console.log(data)
+}
+
+const newGameFailure = function (data) {
+  $('#messages').replaceWith('<div id="messages">please try again!</div>')
+}
+
+// const getGameSuccess = function (responseData) {
+//   api.getGames()
+//   console.log(responseData)
+// }
+//
+// const getGameFailure = function () {
+//   $('#get-game-messages').text('get game failed!')
+//   $('#get-game-messages').removeClass()
+//   $('#get-game-messages').addClass('failure')
+// }
+
 module.exports = {
   boardClear,
   displayMessage,
-  makeMoveOnBoard
+  makeMoveOnBoard,
+  newGameSuccess,
+  newGameFailure,
 }

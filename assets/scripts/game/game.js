@@ -2,6 +2,7 @@
 
 // const ui = require('./ui')
 const store = require('./../store')
+const api = require('./api')
 // const events = require('./events')
 
 let gameBoard = ['', '', '', '', '', '', '', '', '']
@@ -11,6 +12,8 @@ let gameBoard = ['', '', '', '', '', '', '', '', '']
 
 const playedMove = function (value, index) {
   gameBoard[index] = value
+  // store.index = index
+  // store.value = value
 }
 
 function checkForWin () {
@@ -25,20 +28,18 @@ function checkForWin () {
   (gameBoard[2] !== ('') && gameBoard[2] === gameBoard[5] && gameBoard[2] === gameBoard[8]) ||
   (gameBoard[0] !== ('') && gameBoard[0] === gameBoard[4] && gameBoard[0] === gameBoard[8]) ||
   (gameBoard[2] !== ('') && gameBoard[2] === gameBoard[4] && gameBoard[2] === gameBoard[6])) {
+    store.over = true
     return 'win'
   } else if (tie === false) {
+    store.over = true
     return 'tie'
   } else {
     $('#messages').text('player ' + store.value + '\'s turn!')
+    store.over = false
   }
-}
-
-const resetBoard = function () {
-  gameBoard = ['', '', '', '', '', '', '', '', '']
 }
 
 module.exports = {
   playedMove,
-  resetBoard,
   checkForWin
 }
