@@ -15,6 +15,29 @@
       <div class="container">
         <h1 class="text-warning">tic tac toe</h1>
 
+        <div class="sign-in-sign-up">
+          <form id="sign-up" class="border">
+            <fieldset>
+              <legend>sign up</legend>
+              <input type="text" name="credentials[email]" placeholder="email">
+              <br>
+              <input type="password" name="credentials[password]" placeholder="password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+              <input type="submit" value="sign up!">
+              <div id="signup_message"></div>
+            </fieldset>
+          </form>
+          <form id="sign-in" class="border">
+            <fieldset>
+              <legend>sign in</legend>
+              <input type="text" name="credentials[email]" placeholder="email">
+              <input type="password" name="credentials[password]" placeholder="password">
+              <input type="submit" value="sign in!">
+              <div id="signin_message"></div>
+            </fieldset>
+          </form>
+        </div>
+
         <div class="row game-board">
           <div id="0" data-id="0" class="col-4 box border-bottom border-right border-info"></div>
           <div id="1" data-id="1" class="col-4 box border-bottom border-right border-left border-info"></div>
@@ -25,10 +48,10 @@
           <div id="6" data-id="6" class="col-4 box border-right border-top border-info"></div>
           <div id="7" data-id="7" class="col-4 box border-right border-top border-left border-info"></div>
           <div id="8" data-id="8" class="col-4 box border-top border-left border-info"></div>
+          <div id="messages">player X's turn!</div>
+          <br><br>
+          <div id="reset"></div>
         </div>
-        <div id="messages">player X's turn!</div>
-        <br><br>
-        <div id="reset"></div>
 
       </div>
     </body>
