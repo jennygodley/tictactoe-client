@@ -2,6 +2,7 @@
 
 const store = require('../store')
 const ui = require('./ui')
+const api =
 const game = require('./game')
 let player = 'X'
 
@@ -28,13 +29,14 @@ const onClickBoard = function () {
   }
 }
 
-const onBoardClear = function () {
+const onNewBoard = function () {
   game.gameBoard = ['', '', '', '', '', '', '', '', '']
+  api.newGame
   ui.boardClear()
 }
 
 module.exports = {
   onClickBoard,
   player,
-  onBoardClear
+  onNewBoard
 }
