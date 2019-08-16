@@ -50,9 +50,20 @@ const onClickBoard = function () {
         player = 'O'
       }
       store.value = player
-      game.checkForWin()
-      computerPlay()
-      if ((game.checkForWin() === 'win') || (game.checkForWin() === 'tie')) {
+      game.checkForWinVsComputer()
+      if (game.checkForWinVsComputer() === 'win') {
+        $('#messages').replaceWith('<div id="messages">you win!</div>')
+        $('#new-game').html('<button class="btn btn-outline-info"">new game</button>')
+      }
+      if (!(game.checkForWinVsComputer() === 'win') || (game.checkForWinVsComputer() === 'tie')) {
+        computerPlay()
+      }
+      if (store.value === 'O') {
+        player = 'X'
+      } else if (store.value === 'X') {
+        player = 'O'
+      }
+      if ((game.checkForWinVsComputer() === 'win') || (game.checkForWinVsComputer() === 'tie')) {
         store.over = true
       }
     }
@@ -64,15 +75,19 @@ const randomNumber = function () {
 
 const computerPlay = function () {
   const number = randomNumber()
-  console.log('number is', number)
-  if (store.game.cells[number] === '') {
+  if (store.gameBoard[number] === '') {
     store.value = player
     store.index = number
+    store.gameBoard[number] = store.value
     $('#' + number).html('<h2>' + store.value + '</h2>')
     api.updateGame(store.id, store.index, store.value, store.over)
   } else {
-    // computerPlay()
-    console.log('else called')
+    computerPlay()
+    game.checkForWinVsComputer()
+    if (game.checkForWinVsComputer() === 'win') {
+      $('#messages').replaceWith('<div id="messages">the computer won!</div>')
+      $('#new-game').html('<button class="btn btn-outline-info"">new game</button>')
+    }
   }
 }
 

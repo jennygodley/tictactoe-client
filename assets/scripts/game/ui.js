@@ -19,11 +19,11 @@ const makeMoveOnBoard = function () {
 }
 
 const displayMessage = function () {
-  if (game.checkForWin() === 'win') {
+  if ((game.checkForWin() === 'win') || (game.checkForWinVsComputer() === 'win')) {
     $('#messages').replaceWith('<div id="messages">player ' + store.value + ' wins!</div>')
     $('#new-game').html('<button class="btn btn-outline-info"">new game</button>')
   } else if
-  (game.checkForWin() === 'tie') {
+  ((game.checkForWin() === 'tie') || (game.checkForWinVsComputer() === 'tie')) {
     $('#messages').replaceWith('<div id="messages">it\'s a tie!</div>')
     $('#new-game').html('<button class="btn btn-outline-info">reset</button>')
   }
