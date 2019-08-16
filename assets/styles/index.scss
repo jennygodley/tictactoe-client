@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Prompt&display=swap');
 @import '~bootstrap/scss/bootstrap';
 //
 body {
+  font-family: lato, sans-serif;
   color: #cf363d;
   margin: 0;
   padding: 0;
@@ -11,19 +13,43 @@ input {
   padding: 3px;
 }
 
-.container {
+header {
+  font-family: prompt, sans-serif;
+  align-items: center;
+  background-color: $yellow;
+  color: #cf363d;
+  height: 20vh;
+  min-height: 100px;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+  z-index: -1;
+}
+
+.dropdown {
+  z-index: 3000;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.header {
+  align-items: center;
+  display: inline-block;
+}
+
+.title {
+  display: inline-block;
+  font-size: 56px;
+}
+
+.container-fluid {
   align-items: center;
   text-align: center;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
-
-// .header {
-//   background-color: #cf363d;
-//   margin: 0;
-//   padding: 20px;
-//   height: 10vh;
-//   width: 100%;
-// }
 
 .sign-in-sign-up {
   align-items: center;

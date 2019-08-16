@@ -21,24 +21,24 @@ const makeMoveOnBoard = function () {
 const displayMessage = function () {
   if (game.checkForWin() === 'win') {
     $('#messages').replaceWith('<div id="messages">player ' + store.value + ' wins!</div>')
-    $('#new-game').html('<button >new game</button>')
+    $('#new-game').html('<button class="btn btn-outline-info"">new game</button>')
   } else if
   (game.checkForWin() === 'tie') {
     $('#messages').replaceWith('<div id="messages">it\'s a tie!</div>')
-    $('#new-game').html('<button >reset</button>')
+    $('#new-game').html('<button class="btn btn-outline-info">reset</button>')
   }
 }
 
 const newGameFailure = function () {
-  $('#messages').replaceWith('<div id="messages">please try again!</div>')
+  $('#messages').replaceWith('<div id="messages">please try again!</div>').delay(1000).fadeOut()
 }
 
 const getGameSuccess = function (data) {
-  $('#get-game-messages').replaceWith('<div id="get-game-messages">you\'ve played ' + data.games.length + ' games!</div>')
+  $('#get-game-messages').replaceWith('<div id="get-game-messages">you\'ve played ' + data.games.length + ' games!</div>').delay(2000).fadeOut()
 }
 
 const getGameFailure = function () {
-  $('#get-game-messages').text('something\'s gone wrong!')
+  $('#get-game-messages').text('something\'s gone wrong!').delay(1000).fadeOut()
 }
 
 module.exports = {

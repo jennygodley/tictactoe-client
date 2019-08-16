@@ -7,14 +7,14 @@ $('.game-board').hide()
 $('.signed-in-options').hide()
 
 const signUpSuccess = function () {
-  $('#signup_message').text('signed up successfully!')
+  $('#signup_message').text('signed up successfully!').delay(1000).fadeOut()
   $('#signup_message').removeClass()
   $('#signup_message').addClass('success')
   $('#sign-up').trigger('reset')
 }
 
 const signUpFailure = function () {
-  $('#signup_message').text('sign-up failed!')
+  $('#signup_message').text('sign-up failed!').delay(1000).fadeOut()
   $('#signup_message').removeClass()
   $('#signup_message').addClass('failure')
 }
