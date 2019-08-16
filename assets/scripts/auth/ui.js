@@ -7,7 +7,6 @@ $('.game-board').hide()
 $('.signed-in-options').hide()
 
 const signUpSuccess = function () {
-  console.log('signUpSuccess ran')
   $('#signup_message').text('signed up successfully!')
   $('#signup_message').removeClass()
   $('#signup_message').addClass('success')
@@ -18,7 +17,6 @@ const signUpFailure = function () {
   $('#signup_message').text('sign-up failed!')
   $('#signup_message').removeClass()
   $('#signup_message').addClass('failure')
-  console.error('signUpFailure ran')
 }
 
 const signInSuccess = function (data) {
@@ -45,7 +43,6 @@ const passwordSuccess = function () {
   $('#password_message').text('password changed!').delay(1000).fadeOut()
   $('#password_message').removeClass()
   $('#password_message').addClass('success')
-  console.log('passwordSuccess ran')
   $('#password').trigger('reset')
 }
 
@@ -62,7 +59,6 @@ const signOutSuccess = function () {
   $('#signout_message').removeClass()
   $('#signout_message').addClass('success')
   $('#toggle').toggle()
-  console.log('signOutSuccess ran')
   $('.game-board').hide(500)
   $('#messages').hide(500)
   $('#new-game').hide(500)

@@ -6,23 +6,24 @@ const api = require('./api')
 // const events = require('./events')
 
 let gameBoard = ['', '', '', '', '', '', '', '', '']
+store.gameBoard = gameBoard
 
 const playedMove = function (value, index) {
-  gameBoard[index] = value
+  store.gameBoard[index] = value
 }
 
 function checkForWin () {
-  const tie = gameBoard.some(function (element) {
+  const tie = store.gameBoard.some(function (element) {
     if (element === '') return true
   })
-  if ((gameBoard[0] !== ('') && gameBoard[0] === gameBoard[1] && gameBoard[0] === gameBoard[2]) ||
-  (gameBoard[3] !== ('') && gameBoard[3] === gameBoard[4] && gameBoard[3] === gameBoard[5]) ||
-  (gameBoard[6] !== ('') && gameBoard[6] === gameBoard[7] && gameBoard[6] === gameBoard[8]) ||
-  (gameBoard[0] !== ('') && gameBoard[0] === gameBoard[3] && gameBoard[0] === gameBoard[6]) ||
-  (gameBoard[1] !== ('') && gameBoard[1] === gameBoard[4] && gameBoard[1] === gameBoard[7]) ||
-  (gameBoard[2] !== ('') && gameBoard[2] === gameBoard[5] && gameBoard[2] === gameBoard[8]) ||
-  (gameBoard[0] !== ('') && gameBoard[0] === gameBoard[4] && gameBoard[0] === gameBoard[8]) ||
-  (gameBoard[2] !== ('') && gameBoard[2] === gameBoard[4] && gameBoard[2] === gameBoard[6])) {
+  if ((store.gameBoard[0] !== ('') && store.gameBoard[0] === store.gameBoard[1] && store.gameBoard[0] === store.gameBoard[2]) ||
+  (store.gameBoard[3] !== ('') && store.gameBoard[3] === store.gameBoard[4] && store.gameBoard[3] === store.gameBoard[5]) ||
+  (store.gameBoard[6] !== ('') && store.gameBoard[6] === store.gameBoard[7] && store.gameBoard[6] === store.gameBoard[8]) ||
+  (store.gameBoard[0] !== ('') && store.gameBoard[0] === store.gameBoard[3] && store.gameBoard[0] === store.gameBoard[6]) ||
+  (store.gameBoard[1] !== ('') && store.gameBoard[1] === store.gameBoard[4] && store.gameBoard[1] === store.gameBoard[7]) ||
+  (store.gameBoard[2] !== ('') && store.gameBoard[2] === store.gameBoard[5] && store.gameBoard[2] === store.gameBoard[8]) ||
+  (store.gameBoard[0] !== ('') && store.gameBoard[0] === store.gameBoard[4] && store.gameBoard[0] === store.gameBoard[8]) ||
+  (store.gameBoard[2] !== ('') && store.gameBoard[2] === store.gameBoard[4] && store.gameBoard[2] === store.gameBoard[6])) {
     store.over = true
     return 'win'
   } else if (tie === false) {

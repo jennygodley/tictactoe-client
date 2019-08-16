@@ -17,7 +17,6 @@ const onClickBoard = function () {
     ui.makeMoveOnBoard()
     ui.displayMessage()
     api.updateGame(store.id, store.index, store.value, store.over)
-    console.log(store.id, store.index, store.value, store.over)
     if (store.value === 'O') {
       player = 'X'
     } else if (store.value === 'X') {
@@ -32,7 +31,6 @@ const onClickBoard = function () {
 }
 
 const onNewBoard = function () {
-  game.gameBoard = ['', '', '', '', '', '', '', '', '']
   player = 'X'
   api.newGame()
     .then(ui.boardClear)

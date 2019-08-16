@@ -20,7 +20,6 @@ const signIn = function (data) {
 }
 
 const passwordReset = function (data) {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -32,7 +31,6 @@ const passwordReset = function (data) {
 }
 
 const signOut = function (data) {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',

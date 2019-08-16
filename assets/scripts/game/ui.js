@@ -6,10 +6,9 @@ const events = require('./events')
 const api = require('./api')
 
 const boardClear = function (data) {
-  game.gameBoard = ['', '', '', '', '', '', '', '', '']
+  store.gameBoard = ['', '', '', '', '', '', '', '', '']
   store.value = 'X'
   store.id = data.game.id
-
   $('.box').text('')
   $('#messages').replaceWith('<div id="messages">player X\'s turn!</div>')
   $('#new-game').html('')
@@ -35,8 +34,6 @@ const newGameFailure = function () {
 }
 
 const getGameSuccess = function (data) {
-  console.log(data)
-  console.log(data.games.length)
   $('#get-game-messages').replaceWith('<div id="get-game-messages">you\'ve played ' + data.games.length + ' games!</div>')
 }
 
