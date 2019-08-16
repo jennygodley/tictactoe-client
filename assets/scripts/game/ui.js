@@ -2,12 +2,11 @@
 
 const store = require('../store')
 const game = require('./game')
-const events = require('./events')
-const api = require('./api')
 
 const boardClear = function (data) {
   store.gameBoard = ['', '', '', '', '', '', '', '', '']
   store.value = 'X'
+  store.game = data.game
   store.id = data.game.id
   store.over = false
   $('.box').text('')
