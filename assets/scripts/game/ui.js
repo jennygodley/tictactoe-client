@@ -22,11 +22,11 @@ const makeMoveOnBoard = function () {
 const displayMessage = function () {
   if (game.checkForWin() === 'win') {
     $('#messages').replaceWith('<div id="messages">player ' + store.value + ' wins!</div>')
-    $('#new-game').html('<button>new game</button>')
+    $('#new-game').html('<button >new game</button>')
   } else if
   (game.checkForWin() === 'tie') {
     $('#messages').replaceWith('<div id="messages">it\'s a tie!</div>')
-    $('#new-game').html('<button>reset</button>')
+    $('#new-game').html('<button >reset</button>')
   }
 }
 

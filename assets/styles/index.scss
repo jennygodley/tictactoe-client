@@ -1,11 +1,32 @@
 @import '~bootstrap/scss/bootstrap';
-
+//
 body {
   color: #cf363d;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  margin: 3px;
+  padding: 3px;
 }
 
 .container {
-  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+// .header {
+//   background-color: #cf363d;
+//   margin: 0;
+//   padding: 20px;
+//   width: 100%;
+// }
+
+.sign-in-sign-up {
+  align-items: center;
+  min-height: 90vh;
   text-align: center;
 }
 
@@ -14,6 +35,12 @@ body {
   display: flex;
   width: 30vw;
   height: 30vw;
+  // align-items: center;
+  // display: flex;
+  // height: 40vw;
+  // margin: 0 auto;
+  // padding: 0;
+  // width: 40vw;
 }
 
 .box {
@@ -23,8 +50,32 @@ body {
 }
 
 .box:after {
-    content: "";
-    float:left;
-    display: block;
-    padding-top: 100%;
+  content: '';
+  display: block;
+  float: left;
+  padding-top: 100%;
 }
+
+.navbar {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+// .card {
+//   width: 40vh;
+// }
+//
+// // // div {
+// // //   text-align: center;
+// // //   // display: inline-block;
+// // //   justify-content: center;
+// // //   align-items: center;
+// // // }
+// // //
+// // //
+// // //
+// // // .container {
+// // //   margin: 0 auto;
+// // //   text-align: center;
+// // // }
+// // //

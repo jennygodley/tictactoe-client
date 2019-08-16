@@ -64,6 +64,8 @@ const signOutSuccess = function () {
   $('#toggle').toggle()
   console.log('signOutSuccess ran')
   $('.game-board').hide(500)
+  $('#messages').hide(500)
+  $('#new-game').hide(500)
   $('.signed-in-options').hide(500)
   $('.sign-in-sign-up').show()
 }
@@ -73,32 +75,6 @@ const signOutFailure = function () {
   $('#signout_message').removeClass()
   $('#signout_message').addClass('failure')
   console.error('signOutFailure ran')
-}
-
-const getGameSuccess = function (exampleData) {
-  $('#get-game-messages').text('example got!')
-  $('#get-game-messages').removeClass()
-  $('#get-game-messages').addClass('success')
-  console.log(exampleData)
-  store.examples = exampleData.examples
-  console.log(store)
-  let examplesHtml = ''
-  exampleData.examples.forEach(example => {
-    examplesHtml += `
-    <p class="name">${example.text}</p>
-    <p class="id">id: ${example.id}</p>
-    <hr>
-  `
-  })
-  $('#examples_here').html(examplesHtml)
-  console.log('getGameSuccess ran')
-}
-
-const getGameFailure = function () {
-  $('#get-game-messages').text('you got a game!')
-  $('#get-game-messages').removeClass()
-  $('#get-game-messages').addClass('failure')
-  console.error('getGameFailure ran')
 }
 
 module.exports = {

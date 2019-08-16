@@ -10,6 +10,6 @@ $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#password').on('submit', authEvents.onPassword)
-  $('#sign-out').on('submit', authEvents.onSignOut)
-  $('#get-game').on('submit', gameEvents.onGetGame)
+  $('#sign-out').on('click', authEvents.onSignOut)
+  $('#get-game').on('click', gameEvents.onGetGame)
 })
