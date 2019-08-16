@@ -9,13 +9,14 @@ const boardClear = function (data) {
   store.gameBoard = ['', '', '', '', '', '', '', '', '']
   store.value = 'X'
   store.id = data.game.id
+  store.over = false
   $('.box').text('')
   $('#messages').replaceWith('<div id="messages">player X\'s turn!</div>')
   $('#new-game').html('')
 }
 
 const makeMoveOnBoard = function () {
-  $(event.target).text(store.value)
+  $(event.target).html('<h2>' + store.value + '</h2>')
 }
 
 const displayMessage = function () {
