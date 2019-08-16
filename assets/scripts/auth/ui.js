@@ -36,7 +36,6 @@ const signInFailure = function () {
   $('#signin_message').text('sign in failed!').delay(1000).fadeOut()
   $('#signin_message').removeClass()
   $('#signin_message').addClass('failure')
-  console.error('signInFailure ran')
 }
 
 const passwordSuccess = function () {
@@ -50,7 +49,6 @@ const passwordFailure = function () {
   $('#password_message').text('password not changed!').delay(1000).fadeOut()
   $('#password_message').removeClass()
   $('#password_message').addClass('failure')
-  console.error('passwordFailure ran')
 }
 
 const signOutSuccess = function () {
@@ -70,7 +68,6 @@ const signOutFailure = function () {
   $('#signout_message').text('sign out failed!').delay(1000).fadeOut()
   $('#signout_message').removeClass()
   $('#signout_message').addClass('failure')
-  console.error('signOutFailure ran')
 }
 
 module.exports = {

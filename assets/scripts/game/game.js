@@ -36,7 +36,6 @@ function checkForWin () {
 }
 
 function checkForWinVsComputer () {
-  console.log(store.gameBoard)
   const tie = store.gameBoard.some(function (element) {
     if (element === '') return true
   })

@@ -18,6 +18,16 @@ const makeMoveOnBoard = function () {
   $(event.target).html('<h2>' + store.value + '</h2>')
 }
 
+const computerMakeMoveOnBoard = function (number) {
+  // const move = function () {
+  //   return '$(\'#\' + number).html(\'<h2>\' + \'O\' + \'</h2>\')'
+  // }
+  setTimeout(function () {
+    $('#' + number).html('<h2>' + 'O' + '</h2>')
+  }, 500)
+  // $('#' + number).html('<h2>' + 'O' + '</h2>').fadeIn(5000).queue()
+}
+
 const displayMessage = function () {
   if ((game.checkForWin() === 'win') || (game.checkForWinVsComputer() === 'win')) {
     $('#messages').replaceWith('<div id="messages">player ' + store.value + ' wins!</div>')
@@ -47,5 +57,6 @@ module.exports = {
   makeMoveOnBoard,
   newGameFailure,
   getGameSuccess,
-  getGameFailure
+  getGameFailure,
+  computerMakeMoveOnBoard
 }

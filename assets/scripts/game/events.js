@@ -79,7 +79,8 @@ const computerPlay = function () {
     store.value = player
     store.index = number
     store.gameBoard[number] = store.value
-    $('#' + number).html('<h2>' + store.value + '</h2>')
+    ui.computerMakeMoveOnBoard(number)
+    // $('#' + number).html('<h2>' + store.value + '</h2>')
     api.updateGame(store.id, store.index, store.value, store.over)
   } else {
     computerPlay()
