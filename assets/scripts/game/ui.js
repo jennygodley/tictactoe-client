@@ -4,6 +4,8 @@ const store = require('../store')
 const game = require('./game')
 
 const boardClear = function (data) {
+  $('#new-game-solo').text('')
+  $('#new-game-computer').text('')
   store.gameBoard = ['', '', '', '', '', '', '', '', '']
   store.value = 'X'
   store.game = data.game
@@ -15,6 +17,8 @@ const boardClear = function (data) {
 }
 
 const boardClearVsComputer = function (data) {
+  $('#new-game-solo').text('')
+  $('#new-game-computer').text('')
   store.gameBoard = ['', '', '', '', '', '', '', '', '']
   store.value = 'X'
   store.game = data.game
@@ -27,6 +31,7 @@ const boardClearVsComputer = function (data) {
 
 const makeMoveOnBoard = function () {
   $(event.target).html('<h2>' + store.value + '</h2>')
+  console.log('event.target is ', event.target)
 }
 
 const computerMakeMoveOnBoard = function (number) {
@@ -34,7 +39,7 @@ const computerMakeMoveOnBoard = function (number) {
   //   return '$(\'#\' + number).html(\'<h2>\' + \'O\' + \'</h2>\')'
   // }
   setTimeout(function () {
-    $('.' + number).html('<h2>' + 'O' + '</h2>')
+    $('#' + number + number).html('<h2>' + 'O' + '</h2>')
   }, 200)
   // $('#' + number).html('<h2>' + 'O' + '</h2>').fadeIn(5000).queue()
 }
