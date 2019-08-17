@@ -5,8 +5,9 @@ const authEvents = require('./auth/events')
 // const ui = require('./game/ui')
 
 $(() => {
-  $('.box').on('click', gameEvents.onClickBoard)
-  $('#new-game').on('click', gameEvents.onNewBoard)
+  $('.solo').on('click', gameEvents.onClickBoardSolo)
+  $('.computer').on('click', gameEvents.onClickBoardVsComputer)
+  $('#new-game-solo').on('click', gameEvents.onNewBoard)
   $('#new-game-vs-computer').on('click', gameEvents.onNewBoardVsComputer)
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)

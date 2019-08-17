@@ -3,6 +3,7 @@
 const store = require('./../store')
 const gameEvents = require('./../game/events')
 
+$('.game-board-computer').hide()
 $('.game-board').hide()
 $('.signed-in-options').hide()
 

@@ -58,16 +58,17 @@ header {
 }
 
 .game-board {
-  margin: 0 auto;
   display: flex;
-  width: 30vw;
   height: 30vw;
-  // align-items: center;
-  // display: flex;
-  // height: 40vw;
-  // margin: 0 auto;
-  // padding: 0;
-  // width: 40vw;
+  margin: 0 auto;
+  width: 30vw;
+}
+
+.game-board-commputer {
+  display: flex;
+  height: 30vw;
+  margin: 0 auto;
+  width: 30vw;
 }
 
 .box {
@@ -88,21 +89,3 @@ header {
   right: 0;
   top: 0;
 }
-// .card {
-//   width: 40vh;
-// }
-//
-// // // div {
-// // //   text-align: center;
-// // //   // display: inline-block;
-// // //   justify-content: center;
-// // //   align-items: center;
-// // // }
-// // //
-// // //
-// // //
-// // // .container {
-// // //   margin: 0 auto;
-// // //   text-align: center;
-// // // }
-// // //

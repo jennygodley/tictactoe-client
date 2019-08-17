@@ -34,7 +34,7 @@ const computerMakeMoveOnBoard = function (number) {
   //   return '$(\'#\' + number).html(\'<h2>\' + \'O\' + \'</h2>\')'
   // }
   setTimeout(function () {
-    $('#' + number).html('<h2>' + 'O' + '</h2>')
+    $('.' + number).html('<h2>' + 'O' + '</h2>')
   }, 200)
   // $('#' + number).html('<h2>' + 'O' + '</h2>').fadeIn(5000).queue()
 }
@@ -42,11 +42,11 @@ const computerMakeMoveOnBoard = function (number) {
 const displayMessage = function () {
   if ((game.checkForWin() === 'win') || (game.checkForWinVsComputer() === 'win')) {
     $('#messages').replaceWith('<div id="messages">player ' + store.value + ' wins!</div>')
-    $('#new-game').html('<button class="btn btn-outline-info"">new game</button>')
+    $('#new-game').html('<button id="new-game-solo" class="btn btn-outline-info"">new game</button>')
   } else if
   ((game.checkForWin() === 'tie') || (game.checkForWinVsComputer() === 'tie')) {
     $('#messages').replaceWith('<div id="messages">it\'s a tie!</div>')
-    $('#new-game').html('<button class="btn btn-outline-info">reset</button>')
+    $('#new-game').html('<button id="new-game-solo" class="btn btn-outline-info">reset</button>')
   }
 }
 

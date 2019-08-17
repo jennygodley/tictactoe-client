@@ -81,16 +81,29 @@
 
       <br>
         <div class="row game-board">
-          <div id="0" class="col-4 box border-3 border-bottom border-right border-info"></div>
-          <div id="1" class="col-4 box border-3 border-bottom border-right border-left border-info"></div>
-          <div id="2" class="col-4 box border-3 border-bottom border-left border-info"></div>
-          <div id="3" class="col-4 box border-3 border-bottom border-right border-top border-info"></div>
-          <div id="4" class="col-4 box border-3 border border-info"></div>
-          <div id="5" class="col-4 box border-3 border-bottom border-top border-left border-info"></div>
-          <div id="6" class="col-4 box border-3 border-right border-top border-info"></div>
-          <div id="7" class="col-4 box border-3 border-right border-top border-left border-info"></div>
-          <div id="8" class="col-4 box border-3 border-top border-left border-info"></div>
+          <div id="0" class="col-4 solo box border-3 border-bottom border-right border-info"></div>
+          <div id="1" class="col-4 solo box border-3 border-bottom border-right border-left border-info"></div>
+          <div id="2" class="col-4 solo box border-3 border-bottom border-left border-info"></div>
+          <div id="3" class="col-4 solo box border-3 border-bottom border-right border-top border-info"></div>
+          <div id="4" class="col-4 solo box border-3 border border-info"></div>
+          <div id="5" class="col-4 solo box border-3 border-bottom border-top border-left border-info"></div>
+          <div id="6" class="col-4 solo box border-3 border-right border-top border-info"></div>
+          <div id="7" class="col-4 solo box border-3 border-right border-top border-left border-info"></div>
+          <div id="8" class="col-4 solo box border-3 border-top border-left border-info"></div>
         </div>
+
+        <div class="row game-board-computer">
+          <div id="0" class="0 col-4 computer box border-3 border-bottom border-right border-info"></div>
+          <div id="1" class="1 col-4 computer box border-3 border-bottom border-right border-left border-info"></div>
+          <div id="2" class="2 col-4 computer box border-3 border-bottom border-left border-info"></div>
+          <div id="3" class="3 col-4 computer box border-3 border-bottom border-right border-top border-info"></div>
+          <div id="4" class="4 col-4 computer box border-3 border border-info"></div>
+          <div id="5" class="5 col-4 computer box border-3 border-bottom border-top border-left border-info"></div>
+          <div id="6" class="6 col-4 computer box border-3 border-right border-top border-info"></div>
+          <div id="7" class="7 col-4 computer box border-3 border-right border-top border-left border-info"></div>
+          <div id="8" class="8 col-4 computer box border-3 border-top border-left border-info"></div>
+        </div>
+
         <br>
         <div id="messages"></div>
         <br>
@@ -154,7 +167,7 @@
             </button>
             <div class="dropdown-menu dropdown-menu-right border-info" aria-labelledby="dropdownMenuButton">
               <a id="new-game-vs-computer" class="dropdown-item text-info">play vs computer</a>
-              <a id="new-game" class="dropdown-item text-info" href="#">play vs yourself</a>
+              <a id="new-game-solo" class="dropdown-item text-info" href="#">play vs yourself</a>
               <a class="dropdown-item text-info" href="#" data-toggle="modal" data-target="#statsModal">get game stats</a>
               <a class="dropdown-item text-info" href="#" data-toggle="modal" data-target="#passwordModal">change password</a>
               <a class="dropdown-item text-info" href="#" id="sign-out">sign out</a>

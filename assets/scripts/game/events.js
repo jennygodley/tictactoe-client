@@ -6,7 +6,7 @@ const api = require('./api')
 const game = require('./game')
 let player = 'X'
 
-const onClickBoardOriginal = function () {
+const onClickBoardSolo = function () {
   const cellValue = $(event.target).text()
   if (!store.over === true) {
     if (cellValue !== '') {
@@ -32,7 +32,7 @@ const onClickBoardOriginal = function () {
   }
 }
 
-const onClickBoard = function () {
+const onClickBoardVsComputer = function () {
   const cellValue = $(event.target).text()
   if (!store.over === true) {
     if (cellValue !== '') {
@@ -84,23 +84,24 @@ const computerPlay = function () {
     api.updateGame(store.id, store.index, store.value, store.over)
   } else {
     computerPlay()
-    game.checkForWinVsComputer()
-    if (game.checkForWinVsComputer() === 'win') {
-      setTimeout(function () {
-        $('#messages').replaceWith('<div id="messages">the computer won!</div>')
-        $('#new-game').html('<button class="btn btn-outline-info"">new game</button>')
-      }, 200)
-    }
-    // } if (game.checkForWinVsComputer() === 'tie') {
-    //   setTimeout(function () {
-    //     $('#messages').replaceWith('<div id="messages">it/s a tie!</div>')
-    //     $('#new-game').html('<button class="btn btn-outline-info"">new game</button>')
-    //   }, 200)
-    // }
+  }
+  game.checkForWinVsComputer()
+  if (game.checkForWinVsComputer() === 'win') {
+    setTimeout(function () {
+      $('#messages').replaceWith('<div id="messages">the computer won!</div>')
+      $('#new-game').html('<button class="btn btn-outline-info"">new game</button>')
+    }, 200)
+  } if (game.checkForWinVsComputer() === 'tie') {
+    setTimeout(function () {
+      $('#messages').replaceWith('<div id="messages">it/s a tie!</div>')
+      $('#new-game').html('<button class="btn btn-outline-info "">new game</button>')
+    }, 200)
   }
 }
 
 const onNewBoard = function () {
+  $('.game-board-computer').hide()
+  $('.game-board').show()
   player = 'X'
   api.newGame()
     .then(ui.boardClear)
@@ -108,6 +109,8 @@ const onNewBoard = function () {
 }
 
 const onNewBoardVsComputer = function () {
+  $('.game-board').hide()
+  $('.game-board-computer').show()
   player = 'X'
   api.newGame()
     .then(ui.boardClearVsComputer)
@@ -122,7 +125,8 @@ const onGetGame = function (event) {
 }
 
 module.exports = {
-  onClickBoard,
+  onClickBoardSolo,
+  onClickBoardVsComputer,
   player,
   onNewBoard,
   onGetGame,
