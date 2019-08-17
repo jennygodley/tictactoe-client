@@ -5,7 +5,7 @@ const store = require('./../store')
 // const api = require('./api')
 // const events = require('./events')
 
-let gameBoard = ['', '', '', '', '', '', '', '', '']
+const gameBoard = ['', '', '', '', '', '', '', '', '']
 store.gameBoard = gameBoard
 
 const playedMove = function (value, index) {

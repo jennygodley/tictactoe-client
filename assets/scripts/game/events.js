@@ -53,7 +53,7 @@ const onClickBoardVsComputer = function () {
       game.checkForWinVsComputer()
       if (game.checkForWinVsComputer() === 'win') {
         $('#messages').replaceWith('<div id="messages">you win!</div>')
-        $('#new-game').html('<button class="btn btn-outline-info"">new game</button>')
+        $('#new-game-computer').html('<button class="new-game-computer btn btn-outline-info"">new game</button>')
       }
       if (!(game.checkForWinVsComputer() === 'win') || (game.checkForWinVsComputer() === 'tie')) {
         computerPlay()
@@ -89,12 +89,12 @@ const computerPlay = function () {
   if (game.checkForWinVsComputer() === 'win') {
     setTimeout(function () {
       $('#messages').replaceWith('<div id="messages">the computer won!</div>')
-      $('#new-game').html('<button class="btn btn-outline-info"">new game</button>')
+      $('#new-game-computer').html('<button class="new-game-computer btn btn-outline-info"">new game</button>')
     }, 200)
   } if (game.checkForWinVsComputer() === 'tie') {
     setTimeout(function () {
       $('#messages').replaceWith('<div id="messages">it/s a tie!</div>')
-      $('#new-game').html('<button class="btn btn-outline-info "">new game</button>')
+      $('#new-game-computer').html('<button class="new-game-computer btn btn-outline-info">new game</button>')
     }, 200)
   }
 }
