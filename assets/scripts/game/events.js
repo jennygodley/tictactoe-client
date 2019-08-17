@@ -86,9 +86,17 @@ const computerPlay = function () {
     computerPlay()
     game.checkForWinVsComputer()
     if (game.checkForWinVsComputer() === 'win') {
-      $('#messages').replaceWith('<div id="messages">the computer won!</div>')
-      $('#new-game').html('<button class="btn btn-outline-info"">new game</button>')
+      setTimeout(function () {
+        $('#messages').replaceWith('<div id="messages">the computer won!</div>')
+        $('#new-game').html('<button class="btn btn-outline-info"">new game</button>')
+      }, 200)
     }
+    // } if (game.checkForWinVsComputer() === 'tie') {
+    //   setTimeout(function () {
+    //     $('#messages').replaceWith('<div id="messages">it/s a tie!</div>')
+    //     $('#new-game').html('<button class="btn btn-outline-info"">new game</button>')
+    //   }, 200)
+    // }
   }
 }
 
@@ -96,6 +104,13 @@ const onNewBoard = function () {
   player = 'X'
   api.newGame()
     .then(ui.boardClear)
+    .catch(ui.newGameFailure)
+}
+
+const onNewBoardVsComputer = function () {
+  player = 'X'
+  api.newGame()
+    .then(ui.boardClearVsComputer)
     .catch(ui.newGameFailure)
 }
 
@@ -110,5 +125,6 @@ module.exports = {
   onClickBoard,
   player,
   onNewBoard,
-  onGetGame
+  onGetGame,
+  onNewBoardVsComputer
 }

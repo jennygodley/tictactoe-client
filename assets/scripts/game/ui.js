@@ -14,6 +14,17 @@ const boardClear = function (data) {
   $('#new-game').html('')
 }
 
+const boardClearVsComputer = function (data) {
+  store.gameBoard = ['', '', '', '', '', '', '', '', '']
+  store.value = 'X'
+  store.game = data.game
+  store.id = data.game.id
+  store.over = false
+  $('.box').text('')
+  $('#messages').replaceWith('<div id="messages">your turn!</div>')
+  $('#new-game').html('')
+}
+
 const makeMoveOnBoard = function () {
   $(event.target).html('<h2>' + store.value + '</h2>')
 }
@@ -24,7 +35,7 @@ const computerMakeMoveOnBoard = function (number) {
   // }
   setTimeout(function () {
     $('#' + number).html('<h2>' + 'O' + '</h2>')
-  }, 500)
+  }, 200)
   // $('#' + number).html('<h2>' + 'O' + '</h2>').fadeIn(5000).queue()
 }
 
@@ -44,7 +55,7 @@ const newGameFailure = function () {
 }
 
 const getGameSuccess = function (data) {
-  $('#get-game-messages').replaceWith('<div id="get-game-messages">you\'ve played ' + data.games.length + ' games!</div>').delay(2000).fadeOut()
+  $('#get-game-messages').replaceWith('<div id="get-game-messages">you\'ve played ' + data.games.length + ' games!</div>').delay(1000).fadeOut()
 }
 
 const getGameFailure = function () {
@@ -58,5 +69,6 @@ module.exports = {
   newGameFailure,
   getGameSuccess,
   getGameFailure,
-  computerMakeMoveOnBoard
+  computerMakeMoveOnBoard,
+  boardClearVsComputer
 }

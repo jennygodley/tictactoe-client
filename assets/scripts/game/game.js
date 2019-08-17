@@ -1,8 +1,8 @@
 'use strict'
 
-const ui = require('./ui')
+// const ui = require('./ui')
 const store = require('./../store')
-const api = require('./api')
+// const api = require('./api')
 // const events = require('./events')
 
 let gameBoard = ['', '', '', '', '', '', '', '', '']
