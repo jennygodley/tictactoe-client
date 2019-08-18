@@ -42,7 +42,7 @@ const onClickBoardVsComputer = function () {
       store.value = player
       game.playedMove(store.value, store.index)
       ui.makeMoveOnBoard()
-      ui.displayMessage()
+      ui.displayMessageVsComputer()
       api.updateGame(store.id, store.index, store.value, store.over)
       if (store.value === 'O') {
         player = 'X'
@@ -75,7 +75,6 @@ const randomNumber = function () {
 
 const computerPlay = function () {
   const number = randomNumber()
-  console.log('number is ', number, 'store.gameBoard is', store.gameBoard)
   if (store.gameBoard[number] === '') {
     store.value = player
     store.index = number

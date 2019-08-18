@@ -31,27 +31,34 @@ const boardClearVsComputer = function (data) {
 
 const makeMoveOnBoard = function () {
   $(event.target).html('<h2>' + store.value + '</h2>')
-  console.log('event.target is ', event.target)
 }
 
 const computerMakeMoveOnBoard = function (number) {
-  // const move = function () {
-  //   return '$(\'#\' + number).html(\'<h2>\' + \'O\' + \'</h2>\')'
-  // }
+    // $('#' + number + number).html('<h2>' + 'O' + '</h2>')
   setTimeout(function () {
     $('#' + number + number).html('<h2>' + 'O' + '</h2>')
   }, 200)
-  // $('#' + number).html('<h2>' + 'O' + '</h2>').fadeIn(5000).queue()
 }
 
 const displayMessage = function () {
   if ((game.checkForWin() === 'win') || (game.checkForWinVsComputer() === 'win')) {
     $('#messages').replaceWith('<div id="messages">player ' + store.value + ' wins!</div>')
-    $('#new-game-solo').html('<button class="new-game-solo btn btn-outline-info"">new game</button>')
+    $('#new-game-solo').html('<button id="new-game-solo" class="btn btn-outline-info"">new game</button>')
   } else if
   ((game.checkForWin() === 'tie') || (game.checkForWinVsComputer() === 'tie')) {
     $('#messages').replaceWith('<div id="messages">it\'s a tie!</div>')
-    $('#new-game-solo').html('<button class="new-game-solo btn btn-outline-info">reset</button>')
+    $('#new-game-solo').html('<button id="new-game-solo" class="btn btn-outline-info">reset</button>')
+  }
+}
+
+const displayMessageVsComputer = function () {
+  if ((game.checkForWin() === 'win') || (game.checkForWinVsComputer() === 'win')) {
+    // $('#messages').replaceWith('<div id="messages">the computer won!</div>')
+    $('#new-game-computer').html('<button id="new-game-computer" class="btn btn-outline-info"">new game</button>')
+  } else if
+  ((game.checkForWin() === 'tie') || (game.checkForWinVsComputer() === 'tie')) {
+    $('#messages').replaceWith('<div id="messages">it\'s a tie!</div>')
+    $('#new-game-computer').html('<button id="new-game-computer" class="btn btn-outline-info">reset</button>')
   }
 }
 
@@ -75,5 +82,6 @@ module.exports = {
   getGameSuccess,
   getGameFailure,
   computerMakeMoveOnBoard,
-  boardClearVsComputer
+  boardClearVsComputer,
+  displayMessageVsComputer
 }
