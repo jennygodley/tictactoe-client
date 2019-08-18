@@ -20,67 +20,68 @@
           </div>
         </header>
         <div class="sign-in-sign-up row">
-        <div class="empty col-4"></div>
-        <div id="sign-in-sign-up" class="col-4">
-          <div id="accordion">
-            <div class="card border-warning mb-3">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <button class="btn btn-link text-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    sign up
-                  </button>
-                </h5>
+          <div class="empty col-4"></div>
+          <div id="sign-in-sign-up" class="col-4 keep-largest">
+            <div id="accordion">
+              <div class="card border-warning mb-3">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link text-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      sign up
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                      <form id="sign-up">
+                        <fieldset>
+                          <legend>sign up</legend>
+                          <input type="text" name="credentials[email]" placeholder="user name">
+                          <br>
+                          <input type="password" name="credentials[password]" placeholder="password">
+                          <br>
+                          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+                          <br>
+                          <input class="btn btn-outline-info" type="submit" value="sign up!">
+                          <br>
+                          <div id="signup_message"></div>
+                        </fieldset>
+                      </form>
+                  </div>
+                </div>
               </div>
-              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                    <form id="sign-up">
+              <div class="card border-warning mb-3">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed text-info" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      sign in
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    <form id="sign-in">
                       <fieldset>
-                        <legend>sign up</legend>
+                        <legend>sign in</legend>
                         <input type="text" name="credentials[email]" placeholder="user name">
                         <br>
                         <input type="password" name="credentials[password]" placeholder="password">
                         <br>
-                        <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
-                        <br>
-                        <input class="btn btn-outline-info" type="submit" value="sign up!">
-                        <br>
-                        <div id="signup_message"></div>
+                        <input class="btn btn-outline-info" type="submit" value="sign in!">
+                        <div id="signin_message"></div>
                       </fieldset>
                     </form>
-                </div>
-              </div>
-            </div>
-            <div class="card border-warning mb-3">
-              <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                  <button class="btn btn-link collapsed text-info" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    sign in
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body">
-                  <form id="sign-in">
-                    <fieldset>
-                      <legend>sign in</legend>
-                      <input type="text" name="credentials[email]" placeholder="user name">
-                      <br>
-                      <input type="password" name="credentials[password]" placeholder="password">
-                      <br>
-                      <input class="btn btn-outline-info" type="submit" value="sign in!">
-                      <div id="signin_message"></div>
-                    </fieldset>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="empty col-4"></div>
         </div>
-      </div>
-      <div class="empty col-4"></div>
 
       <br>
-        <div class="row game-board">
+      <div class="board-wrapper">
+        <div class="row game-board keep-largest">
           <div id="0" class="col-4 solo box border-3 border-bottom border-right border-info"></div>
           <div id="1" class="col-4 solo box border-3 border-bottom border-right border-left border-info"></div>
           <div id="2" class="col-4 solo box border-3 border-bottom border-left border-info"></div>
@@ -92,7 +93,7 @@
           <div id="8" class="col-4 solo box border-3 border-top border-left border-info"></div>
         </div>
 
-        <div class="row game-board-computer">
+        <div class="row game-board-computer keep-largest">
           <div id="00" class="0 col-4 computer box border-3 border-bottom border-right border-info"></div>
           <div id="11" class="1 col-4 computer box border-3 border-bottom border-right border-left border-info"></div>
           <div id="22" class="2 col-4 computer box border-3 border-bottom border-left border-info"></div>
@@ -105,10 +106,13 @@
         </div>
 
         <br>
-        <div id="messages"></div>
+        <div id="messages" class="after-board"></div>
         <br>
-        <div id="new-game-solo"></div>
-        <div id="new-game-computer"></div>
+        <div class="buttons">
+          <div id="new-game-solo" class="after-board"></div>
+          <div id="new-game-computer"class="after-board"></div>
+        </div>
+      </div>
 
         <div class="signed-in-options">
           <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

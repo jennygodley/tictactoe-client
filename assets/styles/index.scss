@@ -2,8 +2,8 @@
 @import '~bootstrap/scss/bootstrap';
 //
 body {
-  font-family: lato, sans-serif;
   color: #cf363d;
+  font-family: lato, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -14,23 +14,23 @@ input {
 }
 
 header {
-  font-family: prompt, sans-serif;
   align-items: center;
   background-color: $yellow;
   color: #cf363d;
+  font-family: prompt, sans-serif;
   height: 20vh;
-  min-height: 100px;
   margin: 0;
+  min-height: 100px;
   padding: 10px;
   width: 100%;
   z-index: -1;
 }
 
 .dropdown {
-  z-index: 3000;
   position: absolute;
-  top: 0px;
-  right: 0px;
+  right: 0;
+  top: 0;
+  z-index: 3000;
 }
 
 .header {
@@ -45,44 +45,74 @@ header {
 
 .container-fluid {
   align-items: center;
-  text-align: center;
-  width: 100%;
   margin: 0;
   padding: 0;
+  text-align: center;
+  width: 100%;
 }
 
 .sign-in-sign-up {
   align-items: center;
+  margin: 0;
   min-height: 90vh;
+  padding: 0;
   text-align: center;
+}
+
+.board-wrapper {
+  align-items: center;
+  min-height: 500px;
+}
+
+.after-board {
+  bottom: 20%;
+  left: 30%;
+  right: 30%;
+  position: absolute;
+}
+
+.buttons {
+  bottom: 10%;
+  position: absolute;
+  left: 10%;
+  right: 10%;
 }
 
 .game-board {
   display: flex;
-  height: 30vw;
   margin: 0 auto;
-  width: 30vw;
+  max-height: 30vw;
+  max-width: 30vw;
 }
 
 .game-board-computer {
   display: flex;
-  height: 30vw;
   margin: 0 auto;
-  width: 30vw;
+  max-height: 30vw;
+  max-width: 30vw;
+}
+
+.keep-largest {
+  min-width: 300px;
 }
 
 .box {
   align-items: center;
   display: flex;
+  height: 10vh;
   justify-content: center;
+  min-height: 100px;
+  min-width: 100px;
+  width: 10vh;
+
+  ::after {
+    content: '';
+    display: block;
+    float: left;
+    padding-top: 100%;
+  }
 }
 
-.box:after {
-  content: '';
-  display: block;
-  float: left;
-  padding-top: 100%;
-}
 
 .navbar {
   position: fixed;

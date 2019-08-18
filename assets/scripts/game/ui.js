@@ -12,7 +12,7 @@ const boardClear = function (data) {
   store.id = data.game.id
   store.over = false
   $('.box').text('')
-  $('#messages').replaceWith('<div id="messages">player X\'s turn!</div>')
+  $('#messages').replaceWith('<div id="messages" class="after-board">player X\'s turn!</div>')
   $('#new-game').html('')
 }
 
@@ -25,7 +25,7 @@ const boardClearVsComputer = function (data) {
   store.id = data.game.id
   store.over = false
   $('.box').text('')
-  $('#messages').replaceWith('<div id="messages">your turn!</div>')
+  $('#messages').replaceWith('<div id="messages" class="after-board">your turn!</div>')
   $('#new-game').html('')
 }
 
@@ -42,28 +42,27 @@ const computerMakeMoveOnBoard = function (number) {
 
 const displayMessage = function () {
   if ((game.checkForWin() === 'win') || (game.checkForWinVsComputer() === 'win')) {
-    $('#messages').replaceWith('<div id="messages">player ' + store.value + ' wins!</div>')
+    $('#messages').replaceWith('<div id="messages" class="after-board">player ' + store.value + ' wins!</div>')
     $('#new-game-solo').html('<button id="new-game-solo" class="btn btn-outline-info"">new game</button>')
   } else if
   ((game.checkForWin() === 'tie') || (game.checkForWinVsComputer() === 'tie')) {
-    $('#messages').replaceWith('<div id="messages">it\'s a tie!</div>')
+    $('#messages').replaceWith('<div id="messages" class="after-board">it\'s a tie!</div>')
     $('#new-game-solo').html('<button id="new-game-solo" class="btn btn-outline-info">reset</button>')
   }
 }
 
 const displayMessageVsComputer = function () {
   if ((game.checkForWin() === 'win') || (game.checkForWinVsComputer() === 'win')) {
-    // $('#messages').replaceWith('<div id="messages">the computer won!</div>')
     $('#new-game-computer').html('<button id="new-game-computer" class="btn btn-outline-info"">new game</button>')
   } else if
   ((game.checkForWin() === 'tie') || (game.checkForWinVsComputer() === 'tie')) {
-    $('#messages').replaceWith('<div id="messages">it\'s a tie!</div>')
+    $('#messages').replaceWith('<div id="messages" class="after-board">it\'s a tie!</div>')
     $('#new-game-computer').html('<button id="new-game-computer" class="btn btn-outline-info">reset</button>')
   }
 }
 
 const newGameFailure = function () {
-  $('#messages').replaceWith('<div id="messages">please try again!</div>').delay(1000).fadeOut()
+  $('#messages').replaceWith('<div id="messages" class="after-board">please try again!</div>').delay(1000).fadeOut()
 }
 
 const getGameSuccess = function (data) {
