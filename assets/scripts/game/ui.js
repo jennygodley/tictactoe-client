@@ -34,7 +34,6 @@ const makeMoveOnBoard = function () {
 }
 
 const computerMakeMoveOnBoard = function (number) {
-    // $('#' + number + number).html('<h2>' + 'O' + '</h2>')
   setTimeout(function () {
     $('#' + number + number).html('<h2>' + 'O' + '</h2>')
   }, 200)
@@ -66,7 +65,24 @@ const newGameFailure = function () {
 }
 
 const getGameSuccess = function (data) {
+  console.log(data.games)
   $('#get-game-messages').replaceWith('<div id="get-game-messages">you\'ve played ' + data.games.length + ' games!</div>').delay(1000).fadeOut()
+  // let completedGames = 0
+  // let unfinishedGames = 0
+  // const overGames = function () {
+  //   for (let i = 0; i > data.games; i++) {
+  //     if (data.games.over === true) {
+  //       completedGames++
+  //     } else if (data.games.over === false) {
+  //       unfinishedGames++
+  //     }
+  //   }
+  // }
+  // overGames()
+  // const trueOver = data.games.over.values(true)
+  // console.log(trueOver)
+  // // console.log(data[100].games.over)
+  // console.log('unfinishedGames is ', unfinishedGames, 'completedGames is ', completedGames)
 }
 
 const getGameFailure = function () {

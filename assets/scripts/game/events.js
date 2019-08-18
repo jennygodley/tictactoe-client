@@ -80,7 +80,6 @@ const computerPlay = function () {
     store.index = number
     store.gameBoard[number] = store.value
     ui.computerMakeMoveOnBoard(number)
-    // $('#' + number).html('<h2>' + store.value + '</h2>')
     api.updateGame(store.id, store.index, store.value, store.over)
   } else {
     computerPlay()
@@ -93,7 +92,7 @@ const computerPlay = function () {
     }, 200)
   } if (game.checkForWinVsComputer() === 'tie') {
     setTimeout(function () {
-      $('#messages').replaceWith('<div id="messages" class="after-board">it/s a tie!</div>')
+      $('#messages').replaceWith('<div id="messages" class="after-board">it\'s a tie!</div>')
       $('#new-game-computer').html('<button class="new-game-computer btn btn-outline-info">new game</button>')
     }, 200)
   }

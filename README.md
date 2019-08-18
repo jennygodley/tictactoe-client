@@ -29,8 +29,10 @@ I started out making the board itself, using Bootstrap. I wanted to start with g
 
 I finished my game logic relatively quickly, but tying the API and the game together was challenging for me.
 
-Finally, I worked on styling the game——I really wanted it to match the wireframe I'd created!
+After this, I worked on styling the game——I really wanted it to match the wireframe I'd created. After this, I optimized styling for mobile as well as for desktop.
+
+Once I finished what I believe are the requirements, I started working on an AI opponent. While this was challenging, even more challenging was to make the "play vs computer" and "play vs yourself" versions toggle-able.
 
 ## Future Iterations
 
-I'd like to write functionality so that the user can play against the computer.
+I'd like to make an option to continue as a guest. I also intend to create a local score tracker that will display your score per session.
