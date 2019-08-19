@@ -43,20 +43,35 @@ const displayMessage = function () {
   if ((game.checkForWin() === 'win') || (game.checkForWinVsComputer() === 'win')) {
     $('#messages').replaceWith('<div id="messages" class="after-board">player ' + store.value + ' wins!</div>')
     $('#new-game-solo').html('<button id="new-game-solo" class="btn btn-outline-info"">new game</button>')
+    if (store.value === 'X') {
+      store.xWin++
+    } if (store.value === 'O') {
+      store.oWin++
+    }
+    console.log('xWin is ', store.xWin, 'oWin is ', store.oWin, 'xoTie is ', store.xoTie)
   } else if
   ((game.checkForWin() === 'tie') || (game.checkForWinVsComputer() === 'tie')) {
     $('#messages').replaceWith('<div id="messages" class="after-board">it\'s a tie!</div>')
     $('#new-game-solo').html('<button id="new-game-solo" class="btn btn-outline-info">reset</button>')
+    store.xoTie++
   }
 }
 
 const displayMessageVsComputer = function () {
   if ((game.checkForWin() === 'win') || (game.checkForWinVsComputer() === 'win')) {
     $('#new-game-computer').html('<button id="new-game-computer" class="btn btn-outline-info"">new game</button>')
+    console.log('store.value is', store.value)
+    if (store.value === 'X') {
+      store.youWin++
+    } else {
+      store.computerWin++
+    }
+    console.log('youWin is ', store.youWin, 'computerWin is ', store.computerWin, 'computerTie is ', store.computerTie)
   } else if
   ((game.checkForWin() === 'tie') || (game.checkForWinVsComputer() === 'tie')) {
     $('#messages').replaceWith('<div id="messages" class="after-board">it\'s a tie!</div>')
     $('#new-game-computer').html('<button id="new-game-computer" class="btn btn-outline-info">reset</button>')
+    store.computerTie++
   }
 }
 
@@ -65,24 +80,7 @@ const newGameFailure = function () {
 }
 
 const getGameSuccess = function (data) {
-  console.log(data.games)
   $('#get-game-messages').replaceWith('<div id="get-game-messages">you\'ve played ' + data.games.length + ' games!</div>').delay(1000).fadeOut()
-  // let completedGames = 0
-  // let unfinishedGames = 0
-  // const overGames = function () {
-  //   for (let i = 0; i > data.games; i++) {
-  //     if (data.games.over === true) {
-  //       completedGames++
-  //     } else if (data.games.over === false) {
-  //       unfinishedGames++
-  //     }
-  //   }
-  // }
-  // overGames()
-  // const trueOver = data.games.over.values(true)
-  // console.log(trueOver)
-  // // console.log(data[100].games.over)
-  // console.log('unfinishedGames is ', unfinishedGames, 'completedGames is ', completedGames)
 }
 
 const getGameFailure = function () {

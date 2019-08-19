@@ -5,6 +5,13 @@ const store = require('./../store')
 // const api = require('./api')
 // const events = require('./events')
 
+store.xWin = 0
+store.oWin = 0
+store.xoTie = 0
+store.computerWin = 0
+store.youWin = 0
+store.computerTie = 0
+
 const gameBoard = ['', '', '', '', '', '', '', '', '']
 store.gameBoard = gameBoard
 

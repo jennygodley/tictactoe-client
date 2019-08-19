@@ -75,6 +75,9 @@ const randomNumber = function () {
 
 const computerPlay = function () {
   const number = randomNumber()
+  if (store.over === true) {
+    return
+  }
   if (store.gameBoard[number] === '') {
     store.value = player
     store.index = number
@@ -86,11 +89,15 @@ const computerPlay = function () {
   }
   game.checkForWinVsComputer()
   if (game.checkForWinVsComputer() === 'win') {
+    // store.computerWin++
+    console.log(store.computerWin, 'is computerWin')
     setTimeout(function () {
       $('#messages').replaceWith('<div id="messages" class="after-board">the computer won!</div>')
       $('#new-game-computer').html('<button class="new-game-computer btn btn-outline-info"">new game</button>')
     }, 200)
   } if (game.checkForWinVsComputer() === 'tie') {
+    store.computerTie++
+    console.log(store.computerTie, 'is computerTie')
     setTimeout(function () {
       $('#messages').replaceWith('<div id="messages" class="after-board">it\'s a tie!</div>')
       $('#new-game-computer').html('<button class="new-game-computer btn btn-outline-info">new game</button>')
