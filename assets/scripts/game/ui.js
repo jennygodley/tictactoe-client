@@ -48,7 +48,6 @@ const displayMessage = function () {
     } if (store.value === 'O') {
       store.oWin++
     }
-    console.log('xWin is ', store.xWin, 'oWin is ', store.oWin, 'xoTie is ', store.xoTie)
   } else if
   ((game.checkForWin() === 'tie') || (game.checkForWinVsComputer() === 'tie')) {
     $('#messages').replaceWith('<div id="messages" class="after-board">it\'s a tie!</div>')
@@ -60,19 +59,16 @@ const displayMessage = function () {
 const displayMessageVsComputer = function () {
   if ((game.checkForWin() === 'win') || (game.checkForWinVsComputer() === 'win')) {
     $('#new-game-computer').html('<button id="new-game-computer" class="btn btn-outline-info"">new game</button>')
-    console.log('store.value is', store.value)
     if (store.value === 'X') {
       store.youWin++
     } else {
       store.computerWin++
     }
-    console.log('youWin is ', store.youWin, 'computerWin is ', store.computerWin, 'computerTie is ', store.computerTie)
   } else if
   ((game.checkForWin() === 'tie') || (game.checkForWinVsComputer() === 'tie')) {
     $('#messages').replaceWith('<div id="messages" class="after-board">it\'s a tie!</div>')
     $('#new-game-computer').html('<button id="new-game-computer" class="btn btn-outline-info">reset</button>')
     store.computerTie++
-    console.log('youWin is ', store.youWin, 'computerWin is ', store.computerWin, 'computerTie is ', store.computerTie)
   }
 }
 

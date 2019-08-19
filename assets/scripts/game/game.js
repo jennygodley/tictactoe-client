@@ -57,17 +57,9 @@ function checkForWinVsComputer () {
   (store.gameBoard[0] !== ('') && store.gameBoard[0] === store.gameBoard[4] && store.gameBoard[0] === store.gameBoard[8]) ||
   (store.gameBoard[2] !== ('') && store.gameBoard[2] === store.gameBoard[4] && store.gameBoard[2] === store.gameBoard[6])) {
     store.over = true
-    // if (store.value === 'X') {
-    //   store.youWin++
-    // } if (store.value === 'O') {
-    //   store.computerWin++
-    // }
-    // console.log(store.computerWin, 'is computerWin', store.youWin, 'is youWin')
     return 'win'
   } else if (tie === false) {
     store.over = true
-    // store.computerTie++
-    // console.log(store.computerTie, 'is computerTie')
     return 'tie'
   } else {
     $('#messages').text('')
