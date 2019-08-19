@@ -90,14 +90,14 @@ const computerPlay = function () {
   game.checkForWinVsComputer()
   if (game.checkForWinVsComputer() === 'win') {
     // store.computerWin++
-    console.log(store.computerWin, 'is computerWin')
+    // console.log(store.computerWin, 'is computerWin')
     setTimeout(function () {
       $('#messages').replaceWith('<div id="messages" class="after-board">the computer won!</div>')
       $('#new-game-computer').html('<button class="new-game-computer btn btn-outline-info"">new game</button>')
     }, 200)
   } if (game.checkForWinVsComputer() === 'tie') {
-    store.computerTie++
-    console.log(store.computerTie, 'is computerTie')
+    // store.computerTie++
+    // console.log(store.computerTie, 'is computerTie')
     setTimeout(function () {
       $('#messages').replaceWith('<div id="messages" class="after-board">it\'s a tie!</div>')
       $('#new-game-computer').html('<button class="new-game-computer btn btn-outline-info">new game</button>')
@@ -106,6 +106,7 @@ const computerPlay = function () {
 }
 
 const onNewBoard = function () {
+  store.singleGames++
   $('.game-board-computer').hide()
   $('.game-board').show()
   player = 'X'
@@ -115,6 +116,7 @@ const onNewBoard = function () {
 }
 
 const onNewBoardVsComputer = function () {
+  store.computerGames++
   $('.game-board').hide()
   $('.game-board-computer').show()
   player = 'X'

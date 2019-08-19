@@ -1,8 +1,15 @@
+$theme-colors: (
+  'info': #34b0ba,
+);
+
 @import url('https://fonts.googleapis.com/css?family=Lato|Prompt&display=swap');
 @import '~bootstrap/scss/bootstrap';
-//
+
+$white: #fff;
+$green: #79b758;
+
 body {
-  color: #cf363d;
+  color: $green;
   font-family: lato, sans-serif;
   margin: 0;
   padding: 0;
@@ -16,7 +23,7 @@ input {
 header {
   align-items: center;
   background-color: $yellow;
-  color: #cf363d;
+  color: $white;
   font-family: prompt, sans-serif;
   height: 20vh;
   margin: 0;

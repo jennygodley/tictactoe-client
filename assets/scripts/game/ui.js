@@ -72,6 +72,7 @@ const displayMessageVsComputer = function () {
     $('#messages').replaceWith('<div id="messages" class="after-board">it\'s a tie!</div>')
     $('#new-game-computer').html('<button id="new-game-computer" class="btn btn-outline-info">reset</button>')
     store.computerTie++
+    console.log('youWin is ', store.youWin, 'computerWin is ', store.computerWin, 'computerTie is ', store.computerTie)
   }
 }
 
@@ -80,7 +81,7 @@ const newGameFailure = function () {
 }
 
 const getGameSuccess = function (data) {
-  $('#get-game-messages').replaceWith('<div id="get-game-messages">you\'ve played ' + data.games.length + ' games!</div>').delay(1000).fadeOut()
+  $('#get-game-messages').replaceWith('<div id="get-game-messages">you\'ve played ', data.games.length, ' games!<hr>this session, you\'ve started ' + store.computerGames + ' games against the computer.<br>you\'ve won ', store.youWin, ' games against the computer.<br>you\'ve lost ' + (store.computerGames - store.youWin - store.computerTie) + ' games against the computer.<br>you\'ve tied ' + store.computerTie + ' games against the computer.<hr>this session, you\'ve started ' + store.singleGames + ' games against yourself.<br>X won ' + store.xWin + ' games.<br>O won ' + store.oWin + ' games.<br>X and Y tied ' + store.xoTie + ' games.</div>').delay(5000).fadeOut()
 }
 
 const getGameFailure = function () {

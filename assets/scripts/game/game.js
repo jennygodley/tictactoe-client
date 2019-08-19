@@ -8,9 +8,11 @@ const store = require('./../store')
 store.xWin = 0
 store.oWin = 0
 store.xoTie = 0
+store.singleGames = 0
 store.computerWin = 0
 store.youWin = 0
 store.computerTie = 0
+store.computerGames = 0
 
 const gameBoard = ['', '', '', '', '', '', '', '', '']
 store.gameBoard = gameBoard
@@ -55,9 +57,17 @@ function checkForWinVsComputer () {
   (store.gameBoard[0] !== ('') && store.gameBoard[0] === store.gameBoard[4] && store.gameBoard[0] === store.gameBoard[8]) ||
   (store.gameBoard[2] !== ('') && store.gameBoard[2] === store.gameBoard[4] && store.gameBoard[2] === store.gameBoard[6])) {
     store.over = true
+    // if (store.value === 'X') {
+    //   store.youWin++
+    // } if (store.value === 'O') {
+    //   store.computerWin++
+    // }
+    // console.log(store.computerWin, 'is computerWin', store.youWin, 'is youWin')
     return 'win'
   } else if (tie === false) {
     store.over = true
+    // store.computerTie++
+    // console.log(store.computerTie, 'is computerTie')
     return 'tie'
   } else {
     $('#messages').text('')
