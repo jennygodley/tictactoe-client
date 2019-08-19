@@ -73,11 +73,14 @@ const displayMessageVsComputer = function () {
 }
 
 const newGameFailure = function () {
-  $('#messages').replaceWith('<div id="messages" class="after-board">please try again!</div>').delay(1000).fadeOut()
+  $('#messages').replaceWith('<div id="messages" class="after-board">please try again</div>').delay(1000).fadeOut()
 }
 
 const getGameSuccess = function (data) {
-  $('#get-game-messages').replaceWith('<div id="get-game-messages">you\'ve played ', data.games.length, ' games!<hr>this session, you\'ve started ' + store.computerGames + ' games against the computer.<br>you\'ve won ', store.youWin, ' games against the computer.<br>you\'ve lost ' + (store.computerGames - store.youWin - store.computerTie) + ' games against the computer.<br>you\'ve tied ' + store.computerTie + ' games against the computer.<hr>this session, you\'ve started ' + store.singleGames + ' games against yourself.<br>X won ' + store.xWin + ' games.<br>O won ' + store.oWin + ' games.<br>X and Y tied ' + store.xoTie + ' games.</div>').delay(5000).fadeOut()
+  $('#get-game-messages').replaceWith('<div id="get-game-messages">all time, you\'ve played ' + data.games.length + ' games!<hr>this session, you\'ve started ' + store.computerGames + ' games against the computer.<br>you\'ve won ' + store.youWin + ' games against the computer.<br>you\'ve lost ' + (store.computerGames - store.youWin - store.computerTie) + ' games against the computer.<br>you\'ve tied ' + store.computerTie + ' games against the computer.<hr>this session, you\'ve started ' + store.singleGames + ' games against yourself.<br>X won ' + store.xWin + ' games.<br>O won ' + store.oWin + ' games.<br>X and Y tied ' + store.xoTie + ' games.</div>')
+  // setTimeout(() => {
+  //   $('#get-game-messages').replaceWith('<div id="get-game-messages"></div>').fadeOut()
+  // }, 10000)
 }
 
 const getGameFailure = function () {

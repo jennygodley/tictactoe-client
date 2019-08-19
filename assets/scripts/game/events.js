@@ -10,7 +10,7 @@ const onClickBoardSolo = function () {
   const cellValue = $(event.target).text()
   if (!store.over === true) {
     if (cellValue !== '') {
-      $('#messages').text('this space is occupied!')
+      $('#messages').text('this space is occupied')
     } else {
       store.index = $(event.target).attr('id')
       store.value = player
@@ -36,7 +36,7 @@ const onClickBoardVsComputer = function () {
   const cellValue = $(event.target).text()
   if (!store.over === true) {
     if (cellValue !== '') {
-      $('#messages').text('this space is occupied!')
+      $('#messages').text('this space is occupied')
     } else {
       store.index = $(event.target).attr('id').charAt(0)
       store.value = player
