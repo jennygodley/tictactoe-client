@@ -17,4 +17,5 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#get-game').on('click', gameEvents.onGetGame)
   $('.star').on('click', authEvents.onStar)
+  $('#reset-session-stats').on('click', gameEvents.onResetStats)
 })

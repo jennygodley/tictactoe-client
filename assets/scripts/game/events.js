@@ -52,7 +52,7 @@ const onClickBoardVsComputer = function () {
       store.value = player
       game.checkForWinVsComputer()
       if (game.checkForWinVsComputer() === 'win') {
-        $('#messages').replaceWith('<div id="messages" class="after-board">you win!</div>')
+        $('#messages').replaceWith('<div id="messages" class="after-board">you won!</div>')
         $('#new-game-computer').html('<button class="new-game-computer btn btn-outline-info"">new game</button>')
       }
       if (!(game.checkForWinVsComputer() === 'win') || (game.checkForWinVsComputer() === 'tie')) {
@@ -122,10 +122,23 @@ const onNewBoardVsComputer = function () {
 }
 
 const onGetGame = function (event) {
-  event.preventDefault()
+  // event.preventDefault()
   api.getGames()
     .then(ui.getGameSuccess)
     .catch(ui.getGameFailure)
+}
+
+const onResetStats = function () {
+  event.preventDefault()
+  store.xWin = 0
+  store.oWin = 0
+  store.xoTie = 0
+  store.singleGames = 0
+  store.computerWin = 0
+  store.youWin = 0
+  store.computerTie = 0
+  store.computerGames = 0
+  onGetGame()
 }
 
 module.exports = {
@@ -134,5 +147,6 @@ module.exports = {
   player,
   onNewBoard,
   onGetGame,
-  onNewBoardVsComputer
+  onNewBoardVsComputer,
+  onResetStats
 }

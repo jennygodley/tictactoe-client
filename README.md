@@ -35,4 +35,4 @@ Once I finished what I believe are the requirements, I started working on an AI 
 
 ## Future Iterations
 
-I'd like to make an option to continue as a guest. I also intend to create a local score tracker that will display your score per session.
+I'd like to make an option to continue as a guest.

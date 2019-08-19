@@ -59,6 +59,7 @@ const signOutSuccess = function () {
   $('#signout_message').addClass('success')
   $('#toggle').toggle()
   $('.game-board').hide(500)
+  $('.game-board-computer').hide(500)
   $('#messages').hide(500)
   $('#new-game').hide(500)
   $('.signed-in-options').hide(500)

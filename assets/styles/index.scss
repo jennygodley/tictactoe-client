@@ -132,15 +132,27 @@ a:hover {
 .game-board {
   display: flex;
   margin: 0 auto;
-  max-height: 30vw;
   max-width: 30vw;
+
+  ::after {
+    content: '';
+    display: block;
+    float: left;
+    padding-top: 100%;
+  }
 }
 
 .game-board-computer {
   display: flex;
   margin: 0 auto;
-  max-height: 30vw;
   max-width: 30vw;
+
+  ::after {
+    content: '';
+    display: block;
+    float: left;
+    padding-top: 100%;
+  }
 }
 
 .keep-largest {
@@ -150,7 +162,6 @@ a:hover {
 .box {
   align-items: center;
   display: flex;
-  height: 10vh;
   justify-content: center;
   min-height: 100px;
   min-width: 100px;
