@@ -72,7 +72,7 @@ const signOutFailure = function () {
 }
 
 const showCredits = function () {
-  $('.jenny').text('made by jenny godley').delay(1000).fadeOut()
+  $('.jenny').text('made by jenny godley').fadeIn(100).delay(1000).fadeOut()
   setTimeout(() => {
     $('.jenny').text('★').fadeIn()
   }, 2000)

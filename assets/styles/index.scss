@@ -36,13 +36,13 @@ header {
 
 a {
   color: $green;
-
 }
 
 a:hover {
   color: $orange;
   text-decoration: none;
 }
+
 
 .border {
   border-width: 2px !important;
@@ -118,14 +118,14 @@ a:hover {
 .after-board {
   bottom: 20%;
   left: 30%;
-  right: 30%;
   position: absolute;
+  right: 30%;
 }
 
 .buttons {
   bottom: 10%;
-  position: absolute;
   left: 10%;
+  position: absolute;
   right: 10%;
 }
 
