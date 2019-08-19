@@ -2,7 +2,7 @@ $theme-colors: (
   'info': #34b0ba,
 );
 
-@import url('https://fonts.googleapis.com/css?family=Lato|Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Suez+One|Catamaran:900|Lato|Prompt|Chango&display=swap');
 @import '~bootstrap/scss/bootstrap';
 
 $white: #fff;
@@ -25,7 +25,7 @@ header {
   align-items: center;
   background-color: $yellow;
   color: $white;
-  font-family: prompt, sans-serif;
+  font-family: catamaran, prompt, sans-serif;
   height: 20vh;
   margin: 0;
   min-height: 100px;
@@ -90,7 +90,8 @@ a:hover {
 
 .title {
   display: inline-block;
-  font-size: 56px;
+  font-size: 64px;
+  letter-spacing: 3px;
 }
 
 .container-fluid {
