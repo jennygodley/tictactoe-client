@@ -3,7 +3,7 @@
 const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-const gameEvents = require('./../game/events')
+// const gameEvents = require('./../game/events')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -36,9 +36,14 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const onStar = function () {
+  ui.showCredits()
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onPassword,
-  onSignOut
+  onSignOut,
+  onStar
 }

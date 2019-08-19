@@ -7,6 +7,7 @@ $theme-colors: (
 
 $white: #fff;
 $green: #79b758;
+$orange: #f58742;
 
 body {
   color: $green;
@@ -31,6 +32,48 @@ header {
   padding: 10px;
   width: 100%;
   z-index: -1;
+}
+
+a {
+  color: $green;
+
+}
+
+a:hover {
+  color: $orange;
+  text-decoration: none;
+}
+
+.border {
+  border-width: 2px !important;
+}
+
+.border-top {
+  border-width: 2px !important;
+}
+
+.border-right {
+    border-width: 2px !important;
+}
+
+.border-bottom {
+  border-width: 2px !important;
+}
+
+.border-left {
+  border-width: 2px !important;
+}
+
+.star {
+  bottom: 3%;
+  margin: 3px;
+  padding: 3px;
+  position: absolute;
+  right: 3%;
+}
+
+.failure {
+  color: $orange;
 }
 
 .dropdown {

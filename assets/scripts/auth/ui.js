@@ -71,6 +71,13 @@ const signOutFailure = function () {
   $('#signout_message').addClass('failure')
 }
 
+const showCredits = function () {
+  $('.jenny').text('made by jenny godley').delay(1000).fadeOut()
+  setTimeout(() => {
+    $('.jenny').text('★').fadeIn()
+  }, 2000)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -79,5 +86,6 @@ module.exports = {
   passwordSuccess,
   passwordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  showCredits
 }
