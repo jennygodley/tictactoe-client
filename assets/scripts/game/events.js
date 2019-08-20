@@ -91,12 +91,12 @@ const computerPlay = function () {
   if (game.checkForWinVsComputer() === 'win') {
     setTimeout(function () {
       $('#messages').replaceWith('<div id="messages" class="after-board">the computer won!</div>')
-      $('#new-game-computer').html('<button class="new-game-computer btn btn-outline-info"">new game</button>')
+      $('#new-game-computer').replaceWith('<button class="new-game-computer btn btn-outline-info"">new game</button>')
     }, 200)
   } if (game.checkForWinVsComputer() === 'tie') {
     setTimeout(function () {
       $('#messages').replaceWith('<div id="messages" class="after-board">it\'s a tie!</div>')
-      $('#new-game-computer').html('<button class="new-game-computer btn btn-outline-info">new game</button>')
+      $('#new-game-computer').replaceWith('<button class="new-game-computer btn btn-outline-info">new game</button>')
     }, 200)
   }
 }

@@ -18,11 +18,12 @@ const signUpFailure = function () {
   $('#signup_message').text('sign-up failed')
   $('#signup_message').removeClass()
   $('#signup_message').addClass('failure')
+  $('#sign-up').trigger('reset')
 }
 
 const signInSuccess = function (data) {
   store.user = data.user
-  $('#signin_message').text('signed in successfully').delay(2000).fadeOut()
+  $('#signin_message').text('signed in successfully')
   $('#signin_message').removeClass()
   $('#signin_message').addClass('success')
   $('#toggle').toggle()
@@ -37,6 +38,7 @@ const signInFailure = function () {
   $('#signin_message').text('sign in failed')
   $('#signin_message').removeClass()
   $('#signin_message').addClass('failure')
+  $('#sign-in').trigger('reset')
 }
 
 const passwordSuccess = function () {
@@ -50,6 +52,7 @@ const passwordFailure = function () {
   $('#password_message').text('password not changed')
   $('#password_message').removeClass()
   $('#password_message').addClass('failure')
+  $('#password').trigger('reset')
 }
 
 const signOutSuccess = function () {
@@ -63,6 +66,8 @@ const signOutSuccess = function () {
   $('#messages').hide(500)
   $('#new-game').hide(500)
   $('.signed-in-options').hide(500)
+  $('#new-game-solo').hide(500)
+  $('#new-game-computer').hide(500)
   $('.sign-in-sign-up').show()
 }
 

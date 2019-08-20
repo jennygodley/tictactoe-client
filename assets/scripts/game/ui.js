@@ -4,8 +4,8 @@ const store = require('../store')
 const game = require('./game')
 
 const boardClear = function (data) {
-  $('#new-game-solo').text('')
-  $('#new-game-computer').text('')
+  $('#new-game-solo').show().text('')
+  $('#new-game-computer').show().text('')
   store.gameBoard = ['', '', '', '', '', '', '', '', '']
   store.value = 'X'
   store.game = data.game
@@ -17,8 +17,8 @@ const boardClear = function (data) {
 }
 
 const boardClearVsComputer = function (data) {
-  $('#new-game-solo').text('')
-  $('#new-game-computer').text('')
+  $('#new-game-solo').show().text('')
+  $('#new-game-computer').show().text('')
   store.gameBoard = ['', '', '', '', '', '', '', '', '']
   store.value = 'X'
   store.game = data.game
