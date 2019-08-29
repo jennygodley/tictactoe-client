@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>tic tac toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <div class="container-fluid">
+
+        <header>
+          <div class="header">
+          <div class="title"><p class="title">tic tac toe</p></div>
+          </div>
+        </header>
+        <div class="sign-in-sign-up row">
+          <div class="empty col-4"></div>
+          <div id="sign-in-sign-up" class="col-4 keep-largest">
+            <div id="accordion">
+              <div class="card border-warning mb-3">
+                <div class="card-header bg-transparent" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link text-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      sign up
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                      <form id="sign-up" autocomplete="on">
+                        <fieldset>
+                          <legend>sign up</legend>
+                          <input type="text" name="credentials[email]" placeholder="user name">
+                          <br>
+                          <input type="password" name="credentials[password]" placeholder="password" autocomplete="on">
+                          <br>
+                          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password" autocomplete="on">
+                          <br>
+                          <input class="btn btn-outline-info" type="submit" value="sign up">
+                          <br>
+                          <div id="signup_message"></div>
+                        </fieldset>
+                      </form>
+                  </div>
+                </div>
+              </div>
+              <div class="card border-warning mb-3">
+                <div class="card-header bg-transparent" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed text-info" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      sign in
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    <form id="sign-in" autocomplete="on">
+                      <fieldset>
+                        <legend>sign in</legend>
+                        <input type="text" name="credentials[email]" placeholder="user name">
+                        <br>
+                        <input type="password" name="credentials[password]" placeholder="password" autocomplete="on">
+                        <br>
+                        <input class="btn btn-outline-info" type="submit" value="sign in">
+                        <div id="signin_message"></div>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="empty col-4"></div>
+        </div>
+
+      <br>
+      <div class="board-wrapper">
+        <div class="row game-board keep-largest">
+          <div id="0" class="col-4 solo box border-3 border-bottom border-right border-info"></div>
+          <div id="1" class="col-4 solo box border-3 border-bottom border-right border-left border-info"></div>
+          <div id="2" class="col-4 solo box border-3 border-bottom border-left border-info"></div>
+          <div id="3" class="col-4 solo box border-3 border-bottom border-right border-top border-info"></div>
+          <div id="4" class="col-4 solo box border-3 border border-info"></div>
+          <div id="5" class="col-4 solo box border-3 border-bottom border-top border-left border-info"></div>
+          <div id="6" class="col-4 solo box border-3 border-right border-top border-info"></div>
+          <div id="7" class="col-4 solo box border-3 border-right border-top border-left border-info"></div>
+          <div id="8" class="col-4 solo box border-3 border-top border-left border-info"></div>
+        </div>
+
+        <div class="row game-board-computer keep-largest">
+          <div id="00" class="0 col-4 computer box border-3 border-bottom border-right border-info"></div>
+          <div id="11" class="1 col-4 computer box border-3 border-bottom border-right border-left border-info"></div>
+          <div id="22" class="2 col-4 computer box border-3 border-bottom border-left border-info"></div>
+          <div id="33" class="3 col-4 computer box border-3 border-bottom border-right border-top border-info"></div>
+          <div id="44" class="4 col-4 computer box border-3 border border-info"></div>
+          <div id="55" class="5 col-4 computer box border-3 border-bottom border-top border-left border-info"></div>
+          <div id="66" class="6 col-4 computer box border-3 border-right border-top border-info"></div>
+          <div id="77" class="7 col-4 computer box border-3 border-right border-top border-left border-info"></div>
+          <div id="88" class="8 col-4 computer box border-3 border-top border-left border-info"></div>
+        </div>
+
+        <br>
+        <div id="messages" class="after-board"></div>
+        <br>
+        <div class="buttons">
+          <div id="new-game-solo" class="after-board"></div>
+          <div id="new-game-computer"class="after-board"></div>
+        </div>
+      </div>
+
+        <div class="signed-in-options">
+          <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">reset password</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="password" autocomplete="on">
+                    <fieldset>
+                      <input type="password" name="passwords[old]" placeholder="old password" autocomplete="on">
+                      <br>
+                      <input type="password" name="passwords[new]" placeholder="new password" autocomplete="on">
+                      <br>
+                      <input class="btn btn-outline-info" type="submit" value="reset">
+                      <div id="password_message"></div>
+                    </fieldset>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-warning" data-dismiss="modal">close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="statsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">game stats</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="get-game-old" autocomplete="on">
+                    <fieldset>
+                      <div id="get-game-messages"></div><hr>
+                      <input id="reset-session-stats" class="btn btn-outline-info" type="submit" value="reset session stats">
+                    </fieldset>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle btn-warning text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              options
+            </button>
+            <div class="dropdown-menu dropdown-menu-right border-info" aria-labelledby="dropdownMenuButton">
+              <a id="1new-game-computer" class="new-game-computer dropdown-item text-info">new game vs computer</a>
+              <a id="1new-game-solo" class="new-game-solo dropdown-item text-info" href="#">new game vs yourself</a>
+              <a id="get-game" class="dropdown-item text-info" href="#" data-toggle="modal" data-target="#statsModal">get game stats</a>
+              <a class="dropdown-item text-info" href="#" data-toggle="modal" data-target="#passwordModal">change password</a>
+              <a class="dropdown-item text-info" href="#" id="sign-out">sign out</a>
+            </div>
+          </div>
+        </div>
+        <div class="star"><a href="#" class="jenny">★</a></div>
+
+      </div>
+    </body>
+</html>
