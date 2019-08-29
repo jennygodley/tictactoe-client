@@ -23,7 +23,8 @@ const signUpFailure = function () {
 
 const signInSuccess = function (data) {
   store.user = data.user
-  $('#signin_message').text('signed in successfully')
+  $('#signin_message').text('signed in successfully').delay(2000).fadeOut()
+  $('#signin_message').text('').delay(2000).fadeIn()
   $('#signin_message').removeClass()
   $('#signin_message').addClass('success')
   $('#toggle').toggle()
@@ -60,6 +61,7 @@ const signOutSuccess = function () {
   $('#signout_message').text('signed out').delay(1000).fadeOut()
   $('#signout_message').removeClass()
   $('#signout_message').addClass('success')
+  $('#signin_message').text('')
   $('#toggle').toggle()
   $('.game-board').hide(500)
   $('.game-board-computer').hide(500)
