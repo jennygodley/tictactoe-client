@@ -33,14 +33,14 @@
                 </div>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                   <div class="card-body">
-                      <form id="sign-up">
+                      <form id="sign-up" autocomplete="on">
                         <fieldset>
                           <legend>sign up</legend>
                           <input type="text" name="credentials[email]" placeholder="user name">
                           <br>
-                          <input type="password" name="credentials[password]" placeholder="password">
+                          <input type="password" name="credentials[password]" placeholder="password" autocomplete="on">
                           <br>
-                          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+                          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password" autocomplete="on">
                           <br>
                           <input class="btn btn-outline-info" type="submit" value="sign up">
                           <br>
@@ -60,12 +60,12 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                   <div class="card-body">
-                    <form id="sign-in">
+                    <form id="sign-in" autocomplete="on">
                       <fieldset>
                         <legend>sign in</legend>
                         <input type="text" name="credentials[email]" placeholder="user name">
                         <br>
-                        <input type="password" name="credentials[password]" placeholder="password">
+                        <input type="password" name="credentials[password]" placeholder="password" autocomplete="on">
                         <br>
                         <input class="btn btn-outline-info" type="submit" value="sign in">
                         <div id="signin_message"></div>
@@ -125,11 +125,11 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form id="password">
+                  <form id="password" autocomplete="on">
                     <fieldset>
-                      <input type="password" name="passwords[old]" placeholder="old password">
+                      <input type="password" name="passwords[old]" placeholder="old password" autocomplete="on">
                       <br>
-                      <input type="password" name="passwords[new]" placeholder="new password">
+                      <input type="password" name="passwords[new]" placeholder="new password" autocomplete="on">
                       <br>
                       <input class="btn btn-outline-info" type="submit" value="reset">
                       <div id="password_message"></div>
@@ -152,7 +152,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form id="get-game-old">
+                  <form id="get-game-old" autocomplete="on">
                     <fieldset>
                       <div id="get-game-messages"></div><hr>
                       <input id="reset-session-stats" class="btn btn-outline-info" type="submit" value="reset session stats">
